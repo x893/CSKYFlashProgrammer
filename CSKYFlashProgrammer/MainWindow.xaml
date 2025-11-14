@@ -1,0 +1,58 @@
+<Controls:MetroWindow x:Class="CskyFlashProgramer.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:UI="clr-namespace:CskyFlashProgramer.UI"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Service="clr-namespace:Service;assembly=Service"
+                      xmlns:local="clr-namespace:CskyFlashProgramer"
+                      Closed="MetroWindow_Closed"
+					  BorderBrush="{DynamicResource AccentColorBrush}"
+					  BorderThickness="1"
+                      SaveWindowPosition="true" WindowStartupLocation="CenterScreen" Title="Flash Programmer"
+					  Width="800"
+                      FontSize="14" Icon="images/flash_card_black.png" MinWidth="768" MinHeight="392">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="style.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid ScrollViewer.VerticalScrollBarVisibility="Auto">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="25" MinHeight="25" MaxHeight="25"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<UI:MainMenu x:Name="m_mainMenu" Grid.Row="0"/>
+		<Grid Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Label Margin="4">User Config:</Label>
+			<ComboBox SelectionChanged="OnUserConfig_SelectionChanged" x:Name="m_userConfig" Grid.Column="1" Margin="4"/>
+		</Grid>
+		<Border x:Name="m_programFile" Grid.Row="2" Grid.Column="2">
+			<UI:ProgramObjectControl x:Name="m_programObjCtrl"/>
+		</Border>
+		<Button x:Name="m_startBn" Content="Start" Grid.Row="3" Margin="8" FontSize="20"
+            BorderBrush="{DynamicResource AccentColorBrush}" BorderThickness="2"
+            Controls:ControlsHelper.ContentCharacterCasing="Normal"
+            Foreground="{DynamicResource AccentColorBrush}"/>
+		<StatusBar MaxHeight="25" MinHeight="25" HorizontalContentAlignment="Stretch" Margin="0" Grid.Row="4"
+               VerticalAlignment="Bottom">
+			<StatusBarItem x:Name="m_version" Content="" HorizontalAlignment="Right" Margin="4,0"/>
+		</StatusBar>
+	</Grid>
+</Controls:MetroWindow>

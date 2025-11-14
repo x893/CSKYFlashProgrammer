@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: F:\Downloads\Sipeed\CKLink\FlashTools-main\C-SKY\FlashProgrammer\Bins\Service.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1BE963A-5D7C-4428-80C7-32C6EC529B2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Service</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="AppConfigMgr.cs" />
+    <Compile Include="TargetObjectJsonConverter.cs" />
+    <Compile Include="ConnectType.cs" />
+    <Compile Include="ConnectTypeUtil.cs" />
+    <Compile Include="DebugServerSetting.cs" />
+    <Compile Include="DumpFileType.cs" />
+    <Compile Include="DumpFileTypeUtil.cs" />
+    <Compile Include="EraseType.cs" />
+    <Compile Include="ResetType.cs" />
+    <Compile Include="EraseTypeUtil.cs" />
+    <Compile Include="ResetTypeUtil.cs" />
+    <Compile Include="TargetConfig.cs" />
+    <Compile Include="BinFile.cs" />
+    <Compile Include="DumpFileInfo.cs" />
+    <Compile Include="TargetFile.cs" />
+    <Compile Include="CommandType.cs" />
+    <Compile Include="FlashProgramSession.cs" />
+    <Compile Include="PathMgr.cs" />
+    <Compile Include="ProgramFileType.cs" />
+    <Compile Include="ProgramFileTypeUtil.cs" />
+    <Compile Include="ProgrammerProcess.cs" />
+    <Compile Include="ProgramWordRegular.cs" />
+    <Compile Include="ProgramWordRegularUtil.cs" />
+    <Compile Include="ABI.cs" />
+    <Compile Include="RegisterConverter.cs" />
+    <Compile Include="RegisterConvertException.cs" />
+    <Compile Include="SessionMgr.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="TargetObject.cs" />
+    <Compile Include="BinObject.cs" />
+    <Compile Include="ElfObject.cs" />
+    <Compile Include="HexObject.cs" />
+    <Compile Include="WordObject.cs" />
+    <Compile Include="ScriptObject.cs" />
+    <Compile Include="VersionMgr.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

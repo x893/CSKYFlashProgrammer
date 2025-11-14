@@ -1,0 +1,50 @@
+<UserControl x:Class="CskyFlashProgramer.UI.WordValuePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CskyFlashProgramer.UI"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             FontSize="14" Margin="0,5"
+             Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+	<Grid Margin="0">
+		<GroupBox x:Name="groupBox" Header="Word" mah:ControlsHelper.ContentCharacterCasing="Normal"
+              BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="2"
+              FontSize="14" Style="{x:Null}">
+			<Grid Margin="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="123"/>
+					<ColumnDefinition Width="9*"/>
+					<ColumnDefinition Width="Auto" MinWidth="114"/>
+					<ColumnDefinition Width="8*"/>
+				</Grid.ColumnDefinitions>
+				<CheckBox Click="OnProgramClicked" x:Name="m_program" Content="Program" Padding="6,0,0,0" IsChecked="True"
+                  Grid.ColumnSpan="1" FontSize="14" Margin="4" FontFamily="Microsoft YaHei UI"/>
+				<CheckBox Click="OnVerifyClicked" x:Name="m_verify" Content="Verify" Padding="6,0,0,0"
+                  VerticalContentAlignment="Center" Grid.Row="1" FontSize="14" Margin="4"
+                  FontFamily="Microsoft YaHei UI"/>
+				<Label Margin="4" Content="Start: 0x" Grid.Column="1"/>
+				<Label Margin="4" Content="Length: 0x" Grid.Column="3"/>
+				<Label Margin="4" Content="Word Value: 0x" Grid.Row="1" Grid.Column="1"/>
+				<Label Margin="4" Content="Regular:" Grid.Column="3" Grid.Row="1"/>
+				<TextBox x:Name="m_wordStart" Margin="4" TextWrapping="Wrap" Text="" Grid.Row="0" Grid.Column="2"
+                 FontSize="14" Height="32"/>
+				<TextBox x:Name="m_wordLength" Margin="4" TextWrapping="Wrap" Text="" Grid.Row="0" Grid.Column="4"
+                 FontSize="14"/>
+				<TextBox x:Name="m_wordValue" Margin="4" TextWrapping="Wrap" Text="" Grid.Row="1" Grid.Column="2"
+                 FontSize="14" Height="32"/>
+				<ComboBox x:Name="m_wordType" Margin="4" Grid.Row="1" Grid.Column="4" SelectedIndex="0" FontSize="14"
+                  FontFamily="Microsoft YaHei UI">
+					<ComboBoxItem Content="None"/>
+					<ComboBoxItem Content="Down"/>
+					<ComboBoxItem Content="Up"/>
+				</ComboBox>
+			</Grid>
+		</GroupBox>
+	</Grid>
+</UserControl>

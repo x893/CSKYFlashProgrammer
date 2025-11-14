@@ -1,0 +1,50 @@
+<UserControl x:Class="CskyFlashProgramer.UI.LocalJtagSettiongs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:local="clr-namespace:CskyFlashProgramer.UI"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             Width="auto">
+	<Grid Margin="4">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid Margin="4">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Label Margin="4" Content="ICE Clk(KHz):" Grid.Row="1" FontSize="14"/>
+			<Label Margin="4" Content="Delay for 'mtcr'(ms):" Grid.Row="2" FontSize="14"/>
+			<Controls:NumericUpDown x:Name="m_clk" Margin="4"
+									Grid.Row="1" Grid.Column="1"
+									Controls:TextBoxHelper.IsWaitingForData="true"
+									NumericInputMode="Decimal" FontSize="14"
+									HorizontalContentAlignment="Stretch"/>
+			<Controls:NumericUpDown x:Name="m_delay" Margin="4"
+									Grid.Row="2" Grid.Column="1"
+									Controls:TextBoxHelper.IsWaitingForData="true"
+									NumericInputMode="Decimal" FontSize="14"/>
+			<Grid ColumnSpan="2">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<CheckBox x:Name="m_ddc" Margin="4" Content="Use DDC" FontSize="14" Grid.Column="0"/>
+				<CheckBox x:Name="m_trst" Margin="4" Content="Enable TRST" FontSize="14" Grid.Column="1"/>
+				<CheckBox x:Name="m_enableDbgsvrLog" Margin="4" Content="Enable DebugServer Log" Grid.Column="2" FontSize="14"/>
+			</Grid>
+		</Grid>
+	</Grid>
+</UserControl>

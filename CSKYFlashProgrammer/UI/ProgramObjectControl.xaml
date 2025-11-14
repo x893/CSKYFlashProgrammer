@@ -1,0 +1,59 @@
+<UserControl x:Class="CskyFlashProgramer.UI.ProgramObjectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CskyFlashProgramer.UI"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:CskyFlashProgramer="clr-namespace:CskyFlashProgramer"
+             Focusable="true">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<GroupBox x:Name="groupBox" Header="Target Objects" Margin="4,4,4,0"
+				  mah:ControlsHelper.ContentCharacterCasing="Normal" FontSize="14" MinHeight="150" Style="{x:Null}">
+			<Grid Margin="4">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<ListView x:Name="m_listView" VerticalContentAlignment="Stretch" Margin="0,0,0,6"
+						  HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+						  BorderThickness="0">
+					<ListView.View>
+						<GridView>
+							<GridViewColumn Width="{Binding ActualWidth, ElementName=m_listView, Mode=OneWay}"/>
+						</GridView>
+					</ListView.View>
+				</ListView>
+				<Grid Margin="4,4,4,0" Row="1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Button Click="OnButtonAddClicked" x:Name="m_buttonAdd" Margin="4" FontSize="14" Content="ADD"
+							BorderBrush="{DynamicResource AccentColorBrush}">
+						<FrameworkElement.ContextMenu>
+							<ContextMenu x:Name="contextMenu">
+								<MenuItem Click="OnMenuBinClicked" Header="Bin"/>
+								<MenuItem Click="OnMenuElfClicked" Header="Elf"/>
+								<MenuItem Click="OnMenuHexClicked" Header="Hex"/>
+								<MenuItem Click="OnMenuScriptClicked" Header="Script"/>
+								<MenuItem Click="OnMenuWordClicked" Header="Word"/>
+							</ContextMenu>
+						</FrameworkElement.ContextMenu>
+					</Button>
+					<Button Click="OnButtonRemoveClicked" x:Name="m_buttonRemove" Content="REMOVE" Grid.Column="1" Margin="4"
+							FontSize="14" BorderBrush="{DynamicResource AccentColorBrush}"/>
+					<Button Click="OnButtonUpClicked" x:Name="m_buttonUp" Content="UP" Grid.Column="2" Margin="4" FontSize="14"
+							BorderBrush="{DynamicResource AccentColorBrush}"/>
+					<Button Click="OnButtonDownClicked" x:Name="m_buttonDown" Grid.Column="3" Margin="4" FontSize="14"
+							BorderBrush="{DynamicResource AccentColorBrush}" Content="DOWN"/>
+				</Grid>
+			</Grid>
+		</GroupBox>
+	</Grid>
+</UserControl>

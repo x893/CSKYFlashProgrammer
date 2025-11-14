@@ -1,0 +1,60 @@
+<UserControl x:Class="CskyFlashProgramer.MainConfigControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CskyFlashProgramer"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:UI="clr-namespace:CskyFlashProgramer.UI">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<mah:MetroAnimatedTabControl SelectedIndex="0" mah:TabControlHelper.Underlined="SelectedTabItem" Margin="0"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                 MinWidth="290" Background="{x:Null}">
+			<TabItem Header="Target Config" mah:ControlsHelper.HeaderFontSize="15">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="76*"/>
+						<ColumnDefinition Width="261*"/>
+					</Grid.ColumnDefinitions>
+					<UI:TargetConfigView x:Name="m_targetConfig" Grid.ColumnSpan="2"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Local JTAG" mah:ControlsHelper.HeaderFontSize="15">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<UI:LocalJtagSettiongs Width="Auto"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Read" mah:ControlsHelper.HeaderFontSize="15">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<UI:TargetFileReadView x:Name="m_targetFile" Background="{x:Null}"/>
+				</Grid>
+			</TabItem>
+		</mah:MetroAnimatedTabControl>
+		<Button x:Name="m_startButton" Content="Start" Margin="8" Grid.Row="1" FontSize="20"
+            BorderBrush="{DynamicResource AccentColorBrush}" BorderThickness="2"
+            Foreground="{DynamicResource AccentColorBrush}" mah:ControlsHelper.ContentCharacterCasing="Normal"
+            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom"/>
+	</Grid>
+</UserControl>
